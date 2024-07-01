@@ -1,0 +1,19 @@
+.inventory {
+  &-header {
+    margin-bottom: 28px;
+
+    &__flex {
+      display: flex;
+      align-items: center;
+      grid-gap: 12px;
+
+      svg {
+        fill: #ed6741;
+      }
+    }
+  }
+  &-title {
+    font-size: 20px;
+    font-weight: 500;
+  }
+}

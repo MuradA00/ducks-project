@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="En-en">
+@include('partials/head.html')
+
+<body>
+  @include('partials/navbar.html')
+  @include('partials/_roulette.html')
+  @include('partials/header.html')
+  <main>
+    <section class="battle">
+      <div class="battle__container container">
+        <div class="battle__inner">
+          <div class="heading">
+            <div class="heading-flex">
+              <div class="heading-col">
+                <div class="heading-icon">
+                  <svg width='32px' height='32px'>
+                    <use href='img/sprite/sprite.svg#battle-icon'></use>
+                  </svg>
+                </div>
+                <h1 class="heading-title">Case battle</h1>
+              </div>
+              <div class="heading-col">
+                <div class="battle-stats">
+                  <div class="battle-stats__item">
+                    <span class="battle-stats__value">
+                      2
+                    </span>
+                    <span class="battle-stats__descr">
+                      Активных <br> битв
+                    </span>
+                  </div>
+                </div>
+                <div class="battle-stats">
+                  <div class="battle-stats__item">
+                    <span class="battle-stats__value">
+                      870
+                    </span>
+                    <span class="battle-stats__descr">
+                      Завершенных <br> битв
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="battle-slots slots box">
+            <div class="slots-flex">
+              <div class="slots-icon">
+                <img src="img/icons/fightsUsers.webp" alt="icons">
+              </div>
+              <ul class="slots-numbers">
+                <button class="slots-item slots-item--selected">
+                  2
+                </button>
+                <button class="slots-item">
+                  3
+                </button>
+                <button class="slots-item">
+                  4
+                </button>
+              </ul>
+            </div>
+            <button class="slots-button button">
+              <svg width='18px' height='18px'>
+                <use href='img/sprite/sprite.svg#plusIcon'></use>
+              </svg>
+              <span class="button-text">
+                create a battle
+              </span>
+            </b>
+          </div>
+          <div class="battle-box box">
+            <ul class="battle-box__list">
+              <li class="battle-box__item">
+                <div class="battle-box__col battle-area-order">
+                  <div class="battle-box__order">
+                    <div class="battle-box__order-shape">
+                      8
+                    </div>
+                    <span class="battle-box__order-value">
+                      Раундов
+                    </span>
+                  </div>
+                </div>
+                <div class="battle-box__main battle-area-cases">
+                  <ul class="battle-cases">
+                    <li class="battle-cases__item">
+                      <div class="battle-cases__image-container">
+                        <img src="img/fight-page/battleCase.png" alt="case-icon">
+                      </div>
+                    </li>
+                    <li class="battle-cases__item">
+                      <div class="battle-cases__image-container">
+                        <img src="img/fight-page/battleCase.png" alt="case-icon">
+                      </div>
+                      <div class="battle-cases__multiplier">
+                        <span class="battle-cases__multiplier-value">x2</span>
+                      </div>
+                    </li>
+                    <li class="battle-cases__item">
+                      <div class="battle-cases__image-container">
+                        <img src="img/fight-page/battleCase.png" alt="case-icon">
+                      </div>
+                      <div class="battle-cases__multiplier">
+                        <span class="battle-cases__multiplier-value">x2</span>
+                      </div>
+                    </li>
+                  </ul>
+                  <div class="battle-cases__total">
+                    <span class="battle-cases__total-price">
+                      $480
+                    </span>
+                    <span class="battle-cases__total-subheading">Стоимость</span>
+                  </div>
+                </div>
+                <div class="battle-box__col battle-area-users">
+                  <ul class="battle-box__users users">
+                    <li class="battle-box__users-item users-item">
+                      <button class="users-item__container">
+                        <div class="users-item__user-icon">
+                          <img src="img/icons/battle-case-icon3x.webp" alt="user-icon">
+                        </div>
+                        <div class="users-item__add-box">
+                          <span class="users-item__add-box_bar"></span>
+                          <span class="users-item__add-box_bar"></span>
+                        </div>
+                      </button>
+                    </li>
+                    <li class="battle-box__users-item users-item">
+                      <button class="users-item__container">
+                        <div class="users-item__user-icon">
+                          <img src="img/icons/battle-case-icon3x.webp" alt="user-icon">
+                        </div>
+                        <div class="users-item__add-box">
+                          <span class="users-item__add-box_bar"></span>
+                          <span class="users-item__add-box_bar"></span>
+                        </div>
+                      </button>
+                    </li>
+                    <li class="battle-box__users-item users-item">
+                      <button class="users-item__container">
+                        <div class="users-item__add-box">
+                          <span class="users-item__add-box_bar"></span>
+                          <span class="users-item__add-box_bar"></span>
+                        </div>
+                      </button>
+                    </li>
+                    <li class="battle-box__users-item users-item">
+                      <button class="users-item__container">
+                        <div class="users-item__add-box">
+                          <span class="users-item__add-box_bar"></span>
+                          <span class="users-item__add-box_bar"></span>
+                        </div>
+                      </button>
+                    </li>
+                  </ul>
+                </div>
+                <div class="battle-box__actions battle-area-actions">
+                  <button class="battle-box__join">
+                    <svg width='14px' height='14px'>
+                      <use href='img/sprite/sprite.svg#playIcon'></use>
+                    </svg>
+                    Join
+                  </button>
+                  <button class="battle-box__view">
+                    <svg width='20px' height='16px'>
+                      <use href='img/sprite/sprite.svg#eyeIcon'></use>
+                    </svg>
+                    View
+                  </button>
+                </div>
+              </li>
+              <li class="battle-box__item">
+                <div class="battle-box__col battle-area-order">
+                  <div class="battle-box__order">
+                    <div class="battle-box__order-shape">
+                      8
+                    </div>
+                    <span class="battle-box__order-value">
+                      Раундов
+                    </span>
+                  </div>
+                </div>
+                <div class="battle-box__main battle-area-cases">
+                  <ul class="battle-cases">
+                    <li class="battle-cases__item">
+                      <div class="battle-cases__image-container">
+                        <img src="img/fight-page/battleCase.png" alt="case-icon">
+                      </div>
+                    </li>
+                    <li class="battle-cases__item">
+                      <div class="battle-cases__image-container">
+                        <img src="img/fight-page/battleCase.png" alt="case-icon">
+                      </div>
+                      <div class="battle-cases__multiplier">
+                        <span class="battle-cases__multiplier-value">x2</span>
+                      </div>
+                    </li>
+                    <li class="battle-cases__item">
+                      <div class="battle-cases__image-container">
+                        <img src="img/fight-page/battleCase.png" alt="case-icon">
+                      </div>
+                      <div class="battle-cases__multiplier">
+                        <span class="battle-cases__multiplier-value">x2</span>
+                      </div>
+                    </li>
+                  </ul>
+                  <div class="battle-cases__total">
+                    <span class="battle-cases__total-price">
+                      $480
+                    </span>
+                    <span class="battle-cases__total-subheading">Стоимость</span>
+                  </div>
+                </div>
+                <div class="battle-box__col battle-area-users">
+                  <ul class="battle-box__users users">
+                    <li class="battle-box__users-item users-item">
+                      <button class="users-item__container">
+                        <div class="users-item__user-icon">
+                          <img src="img/icons/battle-case-icon3x.webp" alt="user-icon">
+                        </div>
+                        <div class="users-item__add-box">
+                          <span class="users-item__add-box_bar"></span>
+                          <span class="users-item__add-box_bar"></span>
+                        </div>
+                      </button>
+                    </li>
+                    <li class="battle-box__users-item users-item">
+                      <button class="users-item__container">
+                        <div class="users-item__user-icon">
+                          <img src="img/icons/battle-case-icon3x.webp" alt="user-icon">
+                        </div>
+                        <div class="users-item__add-box">
+                          <span class="users-item__add-box_bar"></span>
+                          <span class="users-item__add-box_bar"></span>
+                        </div>
+                      </button>
+                    </li>
+                    <li class="battle-box__users-item users-item">
+                      <button class="users-item__container">
+                        <div class="users-item__add-box">
+                          <span class="users-item__add-box_bar"></span>
+                          <span class="users-item__add-box_bar"></span>
+                        </div>
+                      </button>
+                    </li>
+                    <li class="battle-box__users-item users-item">
+                      <button class="users-item__container">
+                        <div class="users-item__add-box">
+                          <span class="users-item__add-box_bar"></span>
+                          <span class="users-item__add-box_bar"></span>
+                        </div>
+                      </button>
+                    </li>
+                  </ul>
+                </div>
+                <div class="battle-box__actions battle-area-actions">
+                  <button class="battle-box__join">
+                    <svg width='14px' height='14px'>
+                      <use href='img/sprite/sprite.svg#playIcon'></use>
+                    </svg>
+                    Join
+                  </button>
+                  <button class="battle-box__view">
+                    <svg width='20px' height='16px'>
+                      <use href='img/sprite/sprite.svg#eyeIcon'></use>
+                    </svg>
+                    View
+                  </button>
+                </div>
+              </li>
+              <li class="battle-box__item">
+                <div class="battle-box__col battle-area-order">
+                  <div class="battle-box__order">
+                    <div class="battle-box__order-shape">
+                      8
+                    </div>
+                    <span class="battle-box__order-value">
+                      Раундов
+                    </span>
+                  </div>
+                </div>
+                <div class="battle-box__main battle-area-cases">
+                  <ul class="battle-cases">
+                    <li class="battle-cases__item">
+                      <div class="battle-cases__image-container">
+                        <img src="img/fight-page/battleCase.png" alt="case-icon">
+                      </div>
+                    </li>
+                    <li class="battle-cases__item">
+                      <div class="battle-cases__image-container">
+                        <img src="img/fight-page/battleCase.png" alt="case-icon">
+                      </div>
+                      <div class="battle-cases__multiplier">
+                        <span class="battle-cases__multiplier-value">x2</span>
+                      </div>
+                    </li>
+                    <li class="battle-cases__item">
+                      <div class="battle-cases__image-container">
+                        <img src="img/fight-page/battleCase.png" alt="case-icon">
+                      </div>
+                      <div class="battle-cases__multiplier">
+                        <span class="battle-cases__multiplier-value">x2</span>
+                      </div>
+                    </li>
+                  </ul>
+                  <div class="battle-cases__total">
+                    <span class="battle-cases__total-price">
+                      $480
+                    </span>
+                    <span class="battle-cases__total-subheading">Стоимость</span>
+                  </div>
+                </div>
+                <div class="battle-box__col battle-area-users">
+                  <ul class="battle-box__users users">
+                    <li class="battle-box__users-item users-item">
+                      <button class="users-item__container">
+                        <div class="users-item__user-icon">
+                          <img src="img/icons/battle-case-icon3x.webp" alt="user-icon">
+                        </div>
+                        <div class="users-item__add-box">
+                          <span class="users-item__add-box_bar"></span>
+                          <span class="users-item__add-box_bar"></span>
+                        </div>
+                      </button>
+                    </li>
+                    <li class="battle-box__users-item users-item">
+                      <button class="users-item__container">
+                        <div class="users-item__user-icon">
+                          <img src="img/icons/battle-case-icon3x.webp" alt="user-icon">
+                        </div>
+                        <div class="users-item__add-box">
+                          <span class="users-item__add-box_bar"></span>
+                          <span class="users-item__add-box_bar"></span>
+                        </div>
+                      </button>
+                    </li>
+                    <li class="battle-box__users-item users-item">
+                      <button class="users-item__container">
+                        <div class="users-item__add-box">
+                          <span class="users-item__add-box_bar"></span>
+                          <span class="users-item__add-box_bar"></span>
+                        </div>
+                      </button>
+                    </li>
+                    <li class="battle-box__users-item users-item">
+                      <button class="users-item__container">
+                        <div class="users-item__add-box">
+                          <span class="users-item__add-box_bar"></span>
+                          <span class="users-item__add-box_bar"></span>
+                        </div>
+                      </button>
+                    </li>
+                  </ul>
+                </div>
+                <div class="battle-box__actions battle-area-actions">
+                  <button class="battle-box__join">
+                    <svg width='14px' height='14px'>
+                      <use href='img/sprite/sprite.svg#playIcon'></use>
+                    </svg>
+                    Join
+                  </button>
+                  <button class="battle-box__view">
+                    <svg width='20px' height='16px'>
+                      <use href='img/sprite/sprite.svg#eyeIcon'></use>
+                    </svg>
+                    View
+                  </button>
+                </div>
+              </li>
+              <li class="battle-box__item">
+                <div class="battle-box__col battle-area-order">
+                  <div class="battle-box__order">
+                    <div class="battle-box__order-shape">
+                      8
+                    </div>
+                    <span class="battle-box__order-value">
+                      Раундов
+                    </span>
+                  </div>
+                </div>
+                <div class="battle-box__main battle-area-cases">
+                  <ul class="battle-cases">
+                    <li class="battle-cases__item">
+                      <div class="battle-cases__image-container">
+                        <img src="img/fight-page/battleCase.png" alt="case-icon">
+                      </div>
+                    </li>
+                    <li class="battle-cases__item">
+                      <div class="battle-cases__image-container">
+                        <img src="img/fight-page/battleCase.png" alt="case-icon">
+                      </div>
+                      <div class="battle-cases__multiplier">
+                        <span class="battle-cases__multiplier-value">x2</span>
+                      </div>
+                    </li>
+                    <li class="battle-cases__item">
+                      <div class="battle-cases__image-container">
+                        <img src="img/fight-page/battleCase.png" alt="case-icon">
+                      </div>
+                      <div class="battle-cases__multiplier">
+                        <span class="battle-cases__multiplier-value">x2</span>
+                      </div>
+                    </li>
+                  </ul>
+                  <div class="battle-cases__total">
+                    <span class="battle-cases__total-price">
+                      $480
+                    </span>
+                    <span class="battle-cases__total-subheading">Стоимость</span>
+                  </div>
+                </div>
+                <div class="battle-box__col battle-area-users">
+                  <ul class="battle-box__users users">
+                    <li class="battle-box__users-item users-item">
+                      <button class="users-item__container">
+                        <div class="users-item__user-icon">
+                          <img src="img/icons/battle-case-icon3x.webp" alt="user-icon">
+                        </div>
+                        <div class="users-item__add-box">
+                          <span class="users-item__add-box_bar"></span>
+                          <span class="users-item__add-box_bar"></span>
+                        </div>
+                      </button>
+                    </li>
+                    <li class="battle-box__users-item users-item">
+                      <button class="users-item__container">
+                        <div class="users-item__user-icon">
+                          <img src="img/icons/battle-case-icon3x.webp" alt="user-icon">
+                        </div>
+                        <div class="users-item__add-box">
+                          <span class="users-item__add-box_bar"></span>
+                          <span class="users-item__add-box_bar"></span>
+                        </div>
+                      </button>
+                    </li>
+                    <li class="battle-box__users-item users-item">
+                      <button class="users-item__container">
+                        <div class="users-item__add-box">
+                          <span class="users-item__add-box_bar"></span>
+                          <span class="users-item__add-box_bar"></span>
+                        </div>
+                      </button>
+                    </li>
+                    <li class="battle-box__users-item users-item">
+                      <button class="users-item__container">
+                        <div class="users-item__add-box">
+                          <span class="users-item__add-box_bar"></span>
+                          <span class="users-item__add-box_bar"></span>
+                        </div>
+                      </button>
+                    </li>
+                  </ul>
+                </div>
+                <div class="battle-box__actions battle-area-actions">
+                  <button class="battle-box__join">
+                    <svg width='14px' height='14px'>
+                      <use href='img/sprite/sprite.svg#playIcon'></use>
+                    </svg>
+                    Join
+                  </button>
+                  <button class="battle-box__view">
+                    <svg width='20px' height='16px'>
+                      <use href='img/sprite/sprite.svg#eyeIcon'></use>
+                    </svg>
+                    View
+                  </button>
+                </div>
+              </li>
+              <li class="battle-box__item">
+                <div class="battle-box__col battle-area-order">
+                  <div class="battle-box__order">
+                    <div class="battle-box__order-shape">
+                      8
+                    </div>
+                    <span class="battle-box__order-value">
+                      Раундов
+                    </span>
+                  </div>
+                </div>
+                <div class="battle-box__main battle-area-cases">
+                  <ul class="battle-cases">
+                    <li class="battle-cases__item">
+                      <div class="battle-cases__image-container">
+                        <img src="img/fight-page/battleCase.png" alt="case-icon">
+                      </div>
+                    </li>
+                    <li class="battle-cases__item">
+                      <div class="battle-cases__image-container">
+                        <img src="img/fight-page/battleCase.png" alt="case-icon">
+                      </div>
+                      <div class="battle-cases__multiplier">
+                        <span class="battle-cases__multiplier-value">x2</span>
+                      </div>
+                    </li>
+                    <li class="battle-cases__item">
+                      <div class="battle-cases__image-container">
+                        <img src="img/fight-page/battleCase.png" alt="case-icon">
+                      </div>
+                      <div class="battle-cases__multiplier">
+                        <span class="battle-cases__multiplier-value">x2</span>
+                      </div>
+                    </li>
+                  </ul>
+                  <div class="battle-cases__total">
+                    <span class="battle-cases__total-price">
+                      $480
+                    </span>
+                    <span class="battle-cases__total-subheading">Стоимость</span>
+                  </div>
+                </div>
+                <div class="battle-box__col battle-area-users">
+                  <ul class="battle-box__users users">
+                    <li class="battle-box__users-item users-item">
+                      <button class="users-item__container">
+                        <div class="users-item__user-icon">
+                          <img src="img/icons/battle-case-icon3x.webp" alt="user-icon">
+                        </div>
+                        <div class="users-item__add-box">
+                          <span class="users-item__add-box_bar"></span>
+                          <span class="users-item__add-box_bar"></span>
+                        </div>
+                      </button>
+                    </li>
+                    <li class="battle-box__users-item users-item">
+                      <button class="users-item__container">
+                        <div class="users-item__user-icon">
+                          <img src="img/icons/battle-case-icon3x.webp" alt="user-icon">
+                        </div>
+                        <div class="users-item__add-box">
+                          <span class="users-item__add-box_bar"></span>
+                          <span class="users-item__add-box_bar"></span>
+                        </div>
+                      </button>
+                    </li>
+                    <li class="battle-box__users-item users-item">
+                      <button class="users-item__container">
+                        <div class="users-item__add-box">
+                          <span class="users-item__add-box_bar"></span>
+                          <span class="users-item__add-box_bar"></span>
+                        </div>
+                      </button>
+                    </li>
+                    <li class="battle-box__users-item users-item">
+                      <button class="users-item__container">
+                        <div class="users-item__add-box">
+                          <span class="users-item__add-box_bar"></span>
+                          <span class="users-item__add-box_bar"></span>
+                        </div>
+                      </button>
+                    </li>
+                  </ul>
+                </div>
+                <div class="battle-box__actions battle-area-actions">
+                  <button class="battle-box__join">
+                    <svg width='14px' height='14px'>
+                      <use href='img/sprite/sprite.svg#playIcon'></use>
+                    </svg>
+                    Join
+                  </button>
+                  <button class="battle-box__view">
+                    <svg width='20px' height='16px'>
+                      <use href='img/sprite/sprite.svg#eyeIcon'></use>
+                    </svg>
+                    View
+                  </button>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  @include('partials/footer.html')
+</body>
+<script src="js/main.js"></script>
+
+</html>

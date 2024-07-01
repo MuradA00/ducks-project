@@ -1,0 +1,58 @@
+.socials {
+  display: flex;
+  align-items: center;
+  grid-gap: 1rem;
+
+  &__link {
+    width: 36px;
+    height: 36px;
+
+    @include dfc;
+
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+
+    border-radius: 6px;
+
+    &--twitter {
+      background-image: url('../../img/icons/header-tg-bg@2x.webp');
+    }
+    &--discord {
+      background-image: url('../../img/icons/header-discord-bg@2x.webp');
+    }
+    &--tg {
+      background-image: url('../../img/icons/header-tg-bg@2x.webp');
+    }
+
+    transition: transform 400ms ease;
+
+    @include hover {
+      transform: scale(1.1);
+    }
+
+    svg, img {
+      display: block;
+      width: 1.125rem;
+
+      fill: rgba(var(--clr-w), 1);
+    }
+  }
+}
+
+@include laptop {
+  .socials {
+    grid-gap: 10px;
+    grid-area: socials;
+
+    &__link {
+      width: 24px;
+      height: 24px;
+
+      border-radius: 2px;
+
+      svg, img {
+        width: 1rem;
+      }
+    }
+  }
+}

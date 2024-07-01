@@ -1,0 +1,52 @@
+.footer-nav {
+  --link-gap: 0.625rem;
+  --arrow-w: 5px;
+  --footer-nav-link-trans: left 400ms ease, opacity 300ms ease;
+
+  display: flex;
+  flex-direction: column;
+  grid-gap: 1.125rem;
+
+  &__link {
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    grid-gap: var(--link-gap);
+
+    color: rgba(var(--clr-dark-3), 1);
+    font-size: var(--t-base);
+
+    position: relative;
+
+    transition: all 450ms ease;
+
+    @include hover {
+      color: rgba(var(--clr-r), 1);
+
+      padding-left: calc(var(--arrow-w) + var(--link-gap));
+
+      .footer-nav__arrow {
+        left: 0;
+      }
+    }
+  }
+  &__arrow {
+    transition: var(--footer-nav-link-trans);
+    position: absolute;
+
+    display: block;
+
+    top: 50%;
+    transform: translateY(calc(-50% - 2px));
+    left: calc(-1 * var(--link-gap) + var(--arrow-w));
+  }
+}
+
+@include tablet {
+  .footer-nav {
+    &__link {
+      text-align: center;
+      justify-content: center;
+    }
+  }
+}

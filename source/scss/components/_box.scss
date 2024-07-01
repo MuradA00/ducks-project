@@ -1,0 +1,12 @@
+.box {
+  --root-p: 48px;
+  padding: var(--root-p);
+  border-radius: 8px;
+  background-color: #1c1a1a;
+}
+
+@include laptop {
+  .box {
+    --root-p: 20px;
+  }
+}

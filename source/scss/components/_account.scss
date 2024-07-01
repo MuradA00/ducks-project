@@ -1,0 +1,88 @@
+.account {
+  padding: 2rem;
+
+  background-color: #232121;
+  border-radius: 8px;
+  height: 100%;
+
+  &-flex {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-gap: 2rem;
+  }
+  &-input {
+    padding-right: 40px;
+  }
+  &-info {
+    display: flex;
+    flex-direction: column;
+    grid-gap: 1.125rem;
+  }
+  &-public {
+    display: flex;
+    align-items: center;
+    grid-gap: 12px;
+  }
+  &-level {
+    width: 36px;
+    aspect-ratio: 1 / 1;
+    @include dfc;
+
+    background-color: #241814;
+    border-radius: 50%;
+
+    border: 3px solid #bf9637;
+
+    &__value {
+      color: rgba(var(--clr-y), 1);
+      font-size: var(--t-xs);
+      font-family: var(--ff-g);
+      font-weight: 600;
+    }
+  }
+  &-trade-link {
+    color: #ee6742;
+    text-transform: uppercase;
+    @include hover {
+      text-decoration: underline;
+    }
+  }
+  &-description {
+    font-family: var(--ff-g);
+    font-size: var(--t-sm);
+    font-weight: 500;
+    color: #b4a8a8;
+  }
+  &-name {
+    font-size: 20px;
+    font-weight: 600;
+  }
+  &-copy {
+    position: relative;
+    &__button {
+      position: absolute;
+
+      top: 50%;
+      transform: translateY(-50%);
+      right: 1rem;
+
+      svg {
+        fill: #453d3d;
+      }
+    }
+  }
+  &-user {
+    max-width: 88px;
+    height: fit-content;
+    position: relative;
+
+    &__reward {
+      max-width: 2rem;
+
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: -1.75rem;
+    }
+  }
+}

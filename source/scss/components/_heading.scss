@@ -1,0 +1,42 @@
+.heading {
+  --mb: 2rem;
+
+  margin-bottom: var(--mb);
+
+  &-flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    grid-gap: 1.75rem;
+  }
+  &-icon {
+    max-width: 1.75rem;
+    img {
+      width: 100%;
+    }
+    svg {
+      fill: #edbf31;
+    }
+  }
+  &-title {
+    font-size: 26px;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+  &-col {
+    display: flex;
+    align-items: center;
+    grid-gap: 1.25rem;
+  }
+}
+
+@include laptop {
+  .heading {
+    &-flex {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  }
+}

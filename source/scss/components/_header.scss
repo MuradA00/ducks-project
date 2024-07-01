@@ -1,0 +1,233 @@
+.header {
+  --logo-w: 180px;
+  --header-h: 100px;
+  $root-inner-px: 1.5rem;
+
+  padding: 1rem 0;
+
+  &-support {
+    background-color: #1c1a1a;
+
+    padding: 8px 12px;
+
+    border-radius: 6px;
+
+    @include dfc;
+    grid-gap: 12px;
+    text-align: center;
+
+    &__icon {
+      width: 1.25rem;
+      height: 1.25rem;
+    }
+    &__text {
+      font-size: 13px;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: rgba(var(--clr-w), 1);
+    }
+  }
+  &-nav {
+    &__list {
+      display: flex;
+      align-items: center;
+
+      grid-gap: 12px;
+    }
+    &__link {
+      padding: 8px 12px;
+
+      color: rgba(var(--clr-dark-3), 1);
+
+      font-weight: 600;
+
+      font-size: var(--t-base);
+
+      transition: color 400ms ease;
+
+      @include hover {
+        color: rgba(var(--clr-w), 1);
+      }
+    }
+  }
+  &-row {
+    display: flex;
+    align-items: center;
+    grid-gap: clamp(1.5rem, 2vw, 2rem);
+  }
+  &-steam {
+    max-width: 240px;
+    @include dfc;
+
+    padding: 0 1.25rem;
+    min-width: max-content;
+    width: fit-content;
+
+    border: 1px solid #ee6742;
+    min-height: 54px;
+    border-radius: 10px;
+
+    grid-gap: 1rem;
+
+    background-color: #2f211f;
+
+    &__text {
+      font-family: var(--ff);
+      color: rgba(var(--clr-w), 1);
+
+      text-transform: uppercase;
+      font-size: var(--t-base);
+      font-weight: 600;
+
+      position: relative;
+
+      @include hide-text(1);
+    }
+
+    img, svg {
+      max-width: 34px
+    }
+  }
+  &-body {
+    @include dfc;
+    flex-direction: column;
+    grid-gap: 30px;
+    &__logo {
+      max-width: var(--logo-w);
+      width: 100%;
+    }
+
+    &__floor {
+      position: relative;
+
+      width: 100%;
+      display: grid;
+      grid-template-columns: minmax(var(--logo-w), 120px) 1fr auto;
+      align-items: center;
+      grid-gap: 1.5rem;
+
+      padding: 0 $root-inner-px;
+
+      background-color: #1c1a1a;
+
+      min-height: var(--header-h);
+
+      position: relative;
+    }
+  }
+}
+
+@include laptop {
+  .header {
+    &-body {
+      grid-gap: .75rem;
+    }
+    &-row {
+      width: 100%;
+      display: grid;
+      grid-gap: 10px;
+      grid-template-columns: auto 1fr auto auto;
+      grid-template-areas:
+      'lang ... btn socials';
+    }
+    &-support {
+      grid-area: btn;
+      padding: 0;
+
+      width: 24px;
+      height: 24px;
+
+      border-radius: 2px;
+
+      box-shadow: 0 0 0 1px rgba(var(--clr-w), .1);
+
+      &__icon {
+        width: 1rem;
+        height: 1rem;
+      }
+      &__text {
+        display: none;
+      }
+    }
+
+    &-nav {
+      position: fixed;
+      bottom: 61px;
+      z-index: 4;
+      opacity: 0;
+      transition: opacity 200ms ease, all 300ms ease;
+      pointer-events: none;
+      left: 50%;
+      transform: translateX(-50%) scale(.95);
+      background-color: rgba(var(--clr-dark-7), .75);
+      backdrop-filter: blur(4px);
+      border-top: 2px solid rgba(var(--clr-r), .1);
+      padding: .5rem;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+
+      &--active {
+        opacity: 1;
+        transform: translateX(-50%) scale(1);
+        pointer-events: all;
+      }
+
+      &__list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 8px;
+        justify-content: space-between;
+      }
+      &__item {
+        padding: 8px;
+      }
+      &__link {
+        text-align: center;
+        font-size: 12px;
+        font-weight: 500;
+        text-transform: uppercase;
+        width: 100%;
+        padding: 0;
+        justify-content: center;
+
+        @include hide-text(1);
+
+        color: rgba(var(--clr-w), 1);
+      }
+    }
+    &-steam {
+      padding: 12px 14px;
+      &::after {
+        display: none;
+      }
+      &__text {
+        display: none;
+      }
+    }
+    &-body {
+      &__logo {
+        max-width: 100px;
+      }
+      &__floor {
+        &--grid {
+          padding: 0;
+          min-height: 46px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+      }
+    }
+  }
+}
+
+@include small-tablet {
+  .header-nav {
+    bottom: 60px;
+
+    &__link {
+      font-size: 11px;
+    }
+  }
+}

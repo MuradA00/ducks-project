@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="En-en">
+@include('partials/head.html')
+
+<body>
+  @include('partials/navbar.html')
+  @include('partials/_roulette.html')
+  @include('partials/header.html')
+  <main>
+    <section class="profile">
+      <div class="profile__container container">
+        <div class="heading">
+          <div class="heading-flex">
+            <div class="heading-col">
+              <div class="heading-icon">
+                <img src="img/icons/userIcon.png" alt="userIcon">
+              </div>
+              <h1 class="heading-title">personal account</h1>
+            </div>
+            <div class="heading-col">
+              <div class="profile-balance">
+                <span class="profile-balance__value">$9.700</span>
+                <span class="profile-balance__subheading">Balance</span>
+              </div>
+              <button class="button">
+                <svg width='20px' height='20px'>
+                  <use href='img/sprite/sprite.svg#walletIcon'></use>
+                </svg>
+                <span class="button-text">
+                  replenish
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="profile__inner">
+          <div class="profile-dashboard dashboard">
+            <div class="dashboard-row box">
+              <div class="dashboard-col">
+                <div class="dashboard-account account">
+                  <div class="account-flex">
+                    <div class="account-user">
+                      <div class="account-user__icon">
+                        <img src="img/global/user-icon@3x.png" alt="userIcon">
+                      </div>
+                      <div class="account-user__reward">
+                        <img src="img/icons/rewardIcon.png" alt="reward">
+                      </div>
+                    </div>
+                    <div class="account-info">
+                      <div class="account-box account-box--flex">
+                        <div class="account-public">
+                          <div class="account-level">
+                            <span class="account-level__value">30</span>
+                          </div>
+                          <div class="account-name">James Bond</div>
+                        </div>
+                      </div>
+                      <div class="account-box account-copy">
+                        <input
+                          class="input account-input"
+                          type="text"
+                          value="steamcommunity.com/market/listings/730/M4A1-S%20%7C%20Welcome%2"
+                        >
+                        <button class="account-copy__button">
+                          <svg width='18px' height='18px'>
+                            <use href='img/sprite/sprite.svg#copy-icon'></use>
+                          </svg>
+                        </button>
+                      </div>
+                      <div class="account-box">
+                        <p class="account-description">Please make sure that the URL of your trade offer is working correctly and your inventory is open. You should not have a VAC ban.
+                          <a class="account-trade-link" href="#">
+                            view your trade offer >
+                          </a>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="dashboard-col">
+                <div class="drop">
+                  <div class="drop-best">
+                    <div class="drop-best__image">
+                      <img src="img/drop-images/knife-image.png" alt="itemImage">
+                    </div>
+                    <div class="drop-best__info">
+                      <div class="drop-best__header">
+                        <span class="drop-best__highlighted">
+                          the best drop
+                        </span>
+                        <span class="drop-best__subheading">
+                          AK-47 | The red line
+                        </span>
+                      </div>
+                      <div class="drop-best__footer">
+                        <span class="drop-best__label">Cost</span>
+                        <span class="drop-best__price">$980</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="drop-elements">
+                    <div class="drop-stats">
+                      <div class="drop-item">
+                        <div class="drop-value">
+                          51.700
+                        </div>
+                        <div class="drop-description">
+                          Case are open
+                        </div>
+                        <div class="drop-icon">
+                          <svg width='20px' height='20px'>
+                            <use href='img/sprite/sprite.svg#chevron-icon'></use>
+                          </svg>
+                        </div>
+                      </div>
+                      <div class="drop-item">
+                        <div class="drop-value">
+                          51.700
+                        </div>
+                        <div class="drop-description">
+                          Case are open
+                        </div>
+                        <div class="drop-icon">
+                          <svg width='20px' height='20px'>
+                            <use href='img/sprite/sprite.svg#chevron-icon'></use>
+                          </svg>
+                        </div>
+                      </div>
+                      <div class="drop-item">
+                        <div class="drop-value">
+                          51.700
+                        </div>
+                        <div class="drop-description">
+                          Case are open
+                        </div>
+                        <div class="drop-icon">
+                          <svg width='20px' height='20px'>
+                            <use href='img/sprite/sprite.svg#chevron-icon'></use>
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="profile-grid">
+            <div class="profile-grid__box panel">
+              <div class="panel-container">
+                <div class="panel-header">
+                  <ul class="panel-buttons">
+                    <button class="panel-buttons__item">
+                      <svg class="panel-buttons__item-icon">
+                        <use href='img/sprite/sprite.svg#backpack-icon'></use>
+                      </svg>
+                      <span class="panel-buttons__item-text">
+                        Inventory
+                      </span>
+                    </button>
+                    <button class="panel-buttons__item panel-buttons__item--current">
+                      <svg class="panel-buttons__item-icon">
+                        <use href='img/sprite/sprite.svg#chevron-icon'></use>
+                      </svg>
+                      <span class="panel-buttons__item-text">
+                        Upgrades
+                      </span>
+                    </button>
+                    <button class="panel-buttons__item">
+                      <svg class="panel-buttons__item-icon">
+                        <use href='img/sprite/sprite.svg#battle-icon'></use>
+                      </svg>
+                      <span class="panel-buttons__item-text">
+                        Battle of cases
+                      </span>
+                    </button>
+                  </ul>
+                </div>
+                <div class="panel-contents">
+                  <div class="panel-contents__box box">
+                    <ul class="panel-grid">
+                      <li class="panel-grid__item panel-grid__item--ppl">
+                        <div class="panel-grid__content">
+                          <div class="panel-top">
+                            <div class="panel-top__price">
+                              ft
+                            </div>
+                            <span class="panel-top__highlighted">$800</span>
+                          </div>
+                          <div class="panel-grid__image">
+                            <img src="img/drop-images/knife-image.webp" alt="item-image">
+                          </div>
+                          <div class="panel-grid__data">
+                            <div class="panel-grid__name">
+                              Kerambit
+                            </div>
+                            <div class="panel-grid__type">
+                              Tiger's Tooth
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="panel-grid__item panel-grid__item--red">
+                        <div class="panel-grid__content">
+                          <div class="panel-top">
+                            <div class="panel-top__price">
+                              ft
+                            </div>
+                            <span class="panel-top__highlighted">$800</span>
+                          </div>
+                          <div class="panel-grid__image">
+                            <img src="img/drop-images/knife-image.webp" alt="item-image">
+                          </div>
+                          <div class="panel-grid__data">
+                            <div class="panel-grid__name">
+                              Kerambit
+                            </div>
+                            <div class="panel-grid__type">
+                              Tiger's Tooth
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="panel-grid__item panel-grid__item--blue">
+                        <div class="panel-grid__content">
+                          <div class="panel-top">
+                            <div class="panel-top__price">
+                              ft
+                            </div>
+                            <span class="panel-top__highlighted">$800</span>
+                          </div>
+                          <div class="panel-grid__image">
+                            <img src="img/drop-images/knife-image.webp" alt="item-image">
+                          </div>
+                          <div class="panel-grid__data">
+                            <div class="panel-grid__name">
+                              Kerambit
+                            </div>
+                            <div class="panel-grid__type">
+                              Tiger's Tooth
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="panel-grid__item panel-grid__item--gray">
+                        <div class="panel-grid__content">
+                          <div class="panel-top">
+                            <div class="panel-top__price">
+                              ft
+                            </div>
+                            <span class="panel-top__highlighted">$800</span>
+                          </div>
+                          <div class="panel-grid__image">
+                            <img src="img/drop-images/knife-image.webp" alt="item-image">
+                          </div>
+                          <div class="panel-grid__data">
+                            <div class="panel-grid__name">
+                              Kerambit
+                            </div>
+                            <div class="panel-grid__type">
+                              Tiger's Tooth
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="panel-grid__item panel-grid__item--yellow">
+                        <div class="panel-grid__content">
+                          <div class="panel-top">
+                            <div class="panel-top__price">
+                              ft
+                            </div>
+                            <span class="panel-top__highlighted">$800</span>
+                          </div>
+                          <div class="panel-grid__image">
+                            <img src="img/drop-images/knife-image.webp" alt="item-image">
+                          </div>
+                          <div class="panel-grid__data">
+                            <div class="panel-grid__name">
+                              Kerambit
+                            </div>
+                            <div class="panel-grid__type">
+                              Tiger's Tooth
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="panel-grid__item panel-grid__item--ppl">
+                        <div class="panel-grid__content">
+                          <div class="panel-top">
+                            <div class="panel-top__price">
+                              ft
+                            </div>
+                            <span class="panel-top__highlighted">$800</span>
+                          </div>
+                          <div class="panel-grid__image">
+                            <img src="img/drop-images/knife-image.webp" alt="item-image">
+                          </div>
+                          <div class="panel-grid__data">
+                            <div class="panel-grid__name">
+                              Kerambit
+                            </div>
+                            <div class="panel-grid__type">
+                              Tiger's Tooth
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="panel-grid__item panel-grid__item--ppl">
+                        <div class="panel-grid__content">
+                          <div class="panel-top">
+                            <div class="panel-top__price">
+                              ft
+                            </div>
+                            <span class="panel-top__highlighted">$800</span>
+                          </div>
+                          <div class="panel-grid__image">
+                            <img src="img/drop-images/knife-image.webp" alt="item-image">
+                          </div>
+                          <div class="panel-grid__data">
+                            <div class="panel-grid__name">
+                              Kerambit
+                            </div>
+                            <div class="panel-grid__type">
+                              Tiger's Tooth
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="panel-grid__item panel-grid__item--ppl">
+                        <div class="panel-grid__content">
+                          <div class="panel-top">
+                            <div class="panel-top__price">
+                              ft
+                            </div>
+                            <span class="panel-top__highlighted">$800</span>
+                          </div>
+                          <div class="panel-grid__image">
+                            <img src="img/drop-images/knife-image.webp" alt="item-image">
+                          </div>
+                          <div class="panel-grid__data">
+                            <div class="panel-grid__name">
+                              Kerambit
+                            </div>
+                            <div class="panel-grid__type">
+                              Tiger's Tooth
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="panel-grid__item panel-grid__item--ppl">
+                        <div class="panel-grid__content">
+                          <div class="panel-top">
+                            <div class="panel-top__price">
+                              ft
+                            </div>
+                            <span class="panel-top__highlighted">$800</span>
+                          </div>
+                          <div class="panel-grid__image">
+                            <img src="img/drop-images/knife-image.webp" alt="item-image">
+                          </div>
+                          <div class="panel-grid__data">
+                            <div class="panel-grid__name">
+                              Kerambit
+                            </div>
+                            <div class="panel-grid__type">
+                              Tiger's Tooth
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  @include('partials/footer.html')
+</body>
+<script src="js/main.js"></script>
+
+</html>

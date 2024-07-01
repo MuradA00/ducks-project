@@ -1,0 +1,93 @@
+.box-winner {
+  $cup-ratio: 26px;
+  --icon-ratio: clamp(54px, 5vw, 80px);
+
+  background-image: url('../../img/fight-page/bg-winner-block.webp');
+
+  @include dfc;
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    text-align: center;
+
+    margin: -36px 0 0 0;
+
+    grid-gap: 36px;
+  }
+  &__icon {
+    &-container {
+      width: fit-content;
+      margin: 0 auto;
+      position: relative;
+
+      margin-bottom: 26px;
+    }
+
+    border: 3px solid rgba(var(--clr-r), 1);
+
+    border-radius: 8px;
+
+    img, svg {
+      border-radius: 4px;
+
+      border: 3px solid rgba(var(--clr-dark-8), 1);
+
+      width: calc(var(--icon-ratio) + 6px);
+      height: calc(var(--icon-ratio) + 6px);
+
+      display: block;
+    }
+  }
+
+  &__cup {
+    position: absolute;
+    width: $cup-ratio;
+    height: $cup-ratio;
+
+    top: calc($cup-ratio / (-2));
+    right: calc($cup-ratio / (-2));
+
+    svg, img {
+      display: block;
+
+      filter: drop-shadow(-4px 3px 13px rgba(28, 23, 35, 0.53));
+
+      fill: rgba(var(--clr-y), 1);
+    }
+  }
+
+  &__header {
+    text-align: center;
+
+    position: relative;
+
+    text-transform: uppercase;
+
+    &-span {
+      font-weight: 700;
+      &--second {
+        &::before {
+          left: calc(50% + 2px);
+          transform: translateX(-50%);
+
+          right: initial;
+        }
+      }
+    }
+
+    span {
+      letter-spacing: 1px;
+      font-size: var(--t-xl);
+      @include zip-text;
+      &::before {
+        bottom: -2px;
+        right: -4px;
+
+        text-shadow: 2px 2px 0 rgba(var(--clr-zip-text), .75);
+      }
+
+    }
+  }
+}

@@ -1,0 +1,31 @@
+.rules {
+  &-descr {
+    font-size: 15px;
+    font-weight: 500;
+    &:not(:last-child) {
+      margin-bottom: 24px;
+    }
+  }
+  &-link {
+    transition: color 200ms ease;
+    display: inline !important;
+
+    white-space: pre-wrap;
+    white-space: -moz-pre-wrap;
+    white-space: -pre-wrap;
+    white-space: -o-pre-wrap;
+    word-wrap: break-word;
+
+    @include hover {
+      color: rgba(var(--clr-y), 1);
+    }
+  }
+}
+
+@include mobile {
+  .rules {
+    &-descr {
+      font-size: var(--t-sm);
+    }
+  }
+}

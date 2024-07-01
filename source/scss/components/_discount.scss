@@ -1,0 +1,85 @@
+.discount {
+  background-color: #171515;
+
+  padding-top: 128px;
+  position: relative;
+
+  &::after {
+    @include pseudo;
+
+    width: 800px;
+  height: 470px;
+    background-size: cover;
+    background-image: url('../../img/battlepass/discountSectionBg.webp');
+
+    bottom: 0;
+    left: 0;
+
+    z-index: 1;
+
+    pointer-events: none;
+  }
+
+  &-inner {
+    min-height: 314px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+  }
+  &-button {
+    min-height: 80px;
+    @include dfc;
+    text-align: center;
+
+    border-radius: 40px;
+    border: 1px solid #ee6742;
+    background-color: #5d2f24;
+    width: 100%;
+    max-width: 400px;
+
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 24px;
+
+    box-shadow:  0 0 120px 10px rgba(238, 103, 66, .4);
+
+    transition: transform 300ms var(--delay-transition);
+
+    @include hover {
+      transform: scale(1.015);
+    }
+
+    & > * {
+      filter: drop-shadow(0px 2px 0px rgba(0,0,0,0.15));
+    }
+    span {
+      font-size: var(--t-base);
+      color: #ee6742;
+    }
+  }
+}
+
+@include laptop {
+  .discount {
+    &::after {
+      width: 600px;
+      height: 300px;
+    }
+    &-inner {
+      min-height: 240px;
+      grid-gap: 2.5rem;
+    }
+  }
+}
+
+@include small-tablet {
+  .discount {
+    padding-top: 4rem;
+    &::after {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}

@@ -1,0 +1,47 @@
+.battlepass {
+  &-title {
+    text-align: center;
+    line-height: 100%;
+    font-size: 42px;
+    text-transform: uppercase;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+
+    color: #ffcc6e;
+  }
+  &-description {
+    color: #9b8885;
+    font-weight: 500;
+    font-family: var(--ff-g);
+
+    text-align: center;
+
+    &__highlighted {
+      color: #ffcc6e;
+    }
+  }
+  &-subheading {
+    font-weight: 600;
+    font-size: 2rem;
+    text-transform: uppercase;
+    text-align: center;
+    display: block;
+
+    margin-bottom: 40px;
+
+    &__highlighted {
+      color: #ee6742;
+    }
+  }
+}
+
+@include laptop {
+  .battlepass {
+    &-title {
+      font-size: 1.75rem;
+    }
+    &-subheading {
+      font-size: 20px;
+    }
+  }
+}

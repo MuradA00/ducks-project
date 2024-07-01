@@ -1,0 +1,221 @@
+.profile {
+  --profile-user-ratio: 62px;
+  --grid-gap: 1.5rem;
+  --root-box-py: 1.25rem;
+  --root-box-px: 1.5rem;
+  --bg-input: #{HexToRGB(#1b151f)};
+  --bg-link-box: #{HexToRGB(#1f1a27)};
+  --input-py: 1.125rem;
+  --input-px: 1.25rem;
+  --copy-btn-ratio: 38px;
+
+  margin-bottom: clamp(44px, 5.25vw, 84px);
+
+  &-balance {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    &__value {
+      color: rgba(var(--clr-y),1);
+      font-size: var(--t-lg);
+      font-weight: 700;
+    }
+    &__subheading {
+      font-size: var(--t-sm);
+      font-weight: 500;
+      color: #9b8784;
+    }
+  }
+  &-link {
+    padding: var(--root-box-py) var(--root-box-px);
+
+    background-color: rgba(var(--bg-link-box), 1);
+
+    &__field {
+      position: relative;
+
+      background-color: rgba(var(--bg-input), 1);
+
+      border-radius: .5rem;
+    }
+    &__input {
+      padding-right: 56px;
+
+      background-color: transparent;
+
+      color: rgba(var(--clr-dark-3), 1);
+      font-size: var(--t-sm);
+      font-weight: 600;
+    }
+    &__copy {
+      width: var(--copy-btn-ratio);
+      height: var(--copy-btn-ratio);
+
+      @include dfc;
+
+      border-radius: 5px;
+
+      background-color: rgba(var(--clr-r), 1);
+
+      position: absolute;
+
+      right: 4px;
+      top: 50%;
+
+      transform: translateY(-50%);
+
+      img, svg {
+        width: 1.125rem;
+        height: 1.125rem;
+      }
+    }
+    &__header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      margin-bottom: 1.5rem;
+
+      &-text {
+        font-weight: 500;
+        font-size: var(--t-base);
+      }
+
+      &-steam {
+        color: rgba(var(--clr-r), 1);
+        font-weight: 500;
+        font-size: var(--t-sm);
+
+        transition: filter 200ms ease;
+
+        @include hover {
+          filter: brightness(80%);
+        }
+      }
+    }
+  }
+
+  &-user {
+    padding: var(--root-box-py) var(--root-box-px);
+    &__row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    &__info {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      grid-gap: 1.25rem;
+      align-items: center;
+    }
+    &__data {
+      display: flex;
+      flex-direction: column;
+      grid-gap: 8px;
+    }
+    &__name {
+      font-size: var(--t-md);
+      font-weight: 700;
+
+      color: rgba(var(--clr-w), 1);
+
+      max-width: 8.75rem;
+
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow:clip;
+    }
+    &__balance {
+      color: rgba(var(--clr-r), 1);
+      font-size: var(--t-md);
+      font-weight: 700;
+    }
+    &__icon {
+      border-radius: .25rem;
+
+      width: var(--profile-user-ratio);
+      height: var(--profile-user-ratio);
+
+      img {
+        border-radius: inherit;
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+  &__balance-up {
+    --root-btn-py: 14px;
+    --root-btn-px: 1.25rem;
+
+    grid-gap: 0.875rem;
+
+    padding: var(--root-btn-py) var(--root-btn-px);
+
+    border-radius: 6px;
+
+    border: 1px solid rgba(var(--clr-r), 1);
+
+    background-image: linear-gradient(to top, rgba(var(--clr-r), .3) 2%, rgba(var(--clr-b), 0.05));
+
+
+    & > span {
+      font-size: var(--t-base);
+      font-weight: 700;
+      line-height: 100%;
+
+      color: rgba(var(--cl-w), 1);
+    }
+  }
+}
+
+@include laptop {
+  .profile {
+    &-grid {
+      grid-template-columns: repeat(4, 1fr);
+      &__box {
+        grid-column: span 2;
+        &--wider {
+          grid-column: 1 / -1;
+        }
+        &--wide {
+          grid-column: 1 / -1;
+        }
+      }
+    }
+  }
+}
+
+@include small-tablet {
+  .profile {
+    --root-box-px: 1rem;
+
+    &__balance-up {
+      width: 100%;
+    }
+    &-link {
+      &__header {
+        flex-direction: column;
+        align-items: flex-start;
+        grid-gap: 1rem;
+      }
+    }
+    &-user {
+      &__row {
+        flex-direction: column;
+        grid-gap: 1.5rem;
+      }
+      &__info {
+        width: 100%;
+      }
+
+    }
+    &-grid {
+      &__box {
+        min-height: 240px;
+
+        grid-column: 1 / -1;
+      }
+    }
+  }
+}

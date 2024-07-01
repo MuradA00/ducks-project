@@ -1,0 +1,227 @@
+.roulette {
+  --bg-roulette-item: #{HexToRGB(#171515)};
+  --roulette-image-h: 52px;
+  --case-image-w: 100px;
+  --root-link-corner-radius: 6px;
+  $root-padd: 0 18px 14px 18px;
+  $image-transition: transform .2s ease,opacity .2s ease;
+
+  padding: 0.375rem 0 0.375rem 0.375rem;
+
+  &-flex {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-gap: 4px;
+  }
+  &-panel {
+    display: flex;
+    flex-direction: column;
+    grid-gap: 3px;
+  }
+  &-toggle {
+    border-radius: 6px;
+    min-width: 172px;
+    font-size: 13px;
+    text-transform: uppercase;
+    font-weight: 800;
+    min-height: 66px;
+
+    transition: all 300ms ease;
+
+    @include dfc;
+    grid-gap: 14px;
+
+    background-color: #1c1a1a;
+    &--active {
+      background-color: #24201f;
+      svg {
+        fill: #ffcd36;
+      }
+    }
+    &__icon {
+      fill: #5b4f4c;
+      width: 1.5rem;
+      height: 1.5rem;
+      aspect-ratio: 1 / 1;
+    }
+  }
+  &-box {
+    display: flex;
+    align-items: stretch;
+    grid-gap: 6px;
+
+    &__image {
+      height: var(--roulette-image-h);
+
+      position: absolute;
+
+      top: 24px;
+      left: 50%;
+      transform: translateX(-50%);
+
+      transition: $image-transition;
+
+      img {
+        object-fit: contain;
+
+        height: inherit;
+        width: inherit;
+      }
+    }
+    &__content {
+      width: 100%;
+      height: 100%;
+
+      display: flex;
+      align-items: flex-end;
+
+      padding: $root-padd;
+
+      &-name {
+        transition: opacity .2s ease;
+
+        pointer-events: none;
+
+        text-align: left;
+
+        width: 100%;
+
+        color: #fae3e5;
+        font-size: var(--t-sm);
+
+        @include hide-text(1);
+      }
+    }
+    &__link {
+      border-radius: var(--root-link-corner-radius);
+
+      width: 168px;
+      height: 134px;
+      position: relative;
+
+      border-top: 2px solid rgba(var(--bg-item), 1);
+
+      position: relative;
+
+      &::before {
+        @include pseudo;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(var(--bg-item), .4);
+        top: 0;
+        left: 0;
+        opacity: .15;
+        border-radius: inherit;
+        pointer-events: none;
+      }
+
+      &:hover {
+        .roulette-box__case-image {
+          transform: translateX(-50%) scale(1);
+
+          opacity: 1;
+        }
+        .roulette-box__content-name {
+          opacity: 0;
+        }
+        .roulette-box__case-name {
+          opacity: 1;
+        }
+        .roulette-box__image {
+          opacity: 0;
+          transform: translateX(-50%) scale(.7);
+        }
+      }
+      &--red {
+        --bg-item: var(--bg-item-red);
+      }
+      &--blue {
+        --bg-item: var(--clr-bl-2);
+      }
+      &--ppl {
+        --bg-item: #{HexToRGB(#7955f9)};
+        border-top: 1px solid #7854f9;
+      }
+      &--grey {
+        --bg-item: var(--clr-w);
+        border-top: 2px solid #5b5d70;
+      }
+    }
+    &__case-image {
+      height: 82px;
+      position: absolute;
+
+      top: 4px;
+      left: 50%;
+      transform: translateX(-50%);
+
+      opacity: 0;
+
+      transition: $image-transition;
+
+      img {
+        display: block;
+        width: 100%;
+        height: 100%;
+
+        object-fit: contain;
+      }
+    }
+    &__case-name {
+      opacity: 0;
+
+      transition: opacity .2s ease;
+
+      pointer-events: none;
+
+      text-align: left;
+
+      width: 100%;
+
+      color: #fae3e5;
+      font-size: var(--t-sm);
+
+      @include hide-text(1);
+    }
+    &__hidden {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+
+      padding: $root-padd;
+
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+    }
+  }
+}
+
+@include small-tablet {
+  .roulette {
+    &-box {
+      &__case-image {
+        top: -10px;
+      }
+      &__image {
+        top: 4px;
+      }
+      &__hidden {
+        padding: 10px;
+      }
+      &__content {
+        padding: 10px;
+      }
+      &__content-name {
+        font-size: var(--t-xxs);
+      }
+      &__case-name {
+        font-size: var(--t-xxs);
+      }
+      &__link {
+        width: 110px;
+        height: 74px;
+      }
+    }
+  }
+}

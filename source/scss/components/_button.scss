@@ -1,0 +1,44 @@
+.button {
+  --bg: #5c5863;
+  --h: 3.75rem;
+  --gap: 1rem;
+  --cl-o: #{HexToRGB(#834437)};
+  --icon-ratio: 1.5rem;
+
+  background-color: var(--bg);
+  min-height: var(--h);
+
+  @include dfc;
+  text-align: center;
+  grid-gap: var(--gap);
+
+  background-image: linear-gradient(#d07958, rgba(var(--cl-o), 1));
+
+  border-top: 1px solid #fbc464;
+  border-radius: 0.75rem;
+
+  padding: 0 1.25rem;
+
+  min-width: 200px;
+  will-change: transform;
+  box-shadow: 0 0 1.5rem 0.75rem #3a2722;
+  transition: transform 400ms var(--delay-transition);
+
+  &-text {
+    font-weight: 700;
+    font-size: 22px;
+    text-transform: uppercase;
+    filter: drop-shadow(0px 2px 0px rgba(0,0,0,0.15));
+  }
+  img, svg {
+    width: var(--icon-ratio);
+
+    fill: rgba(var(--clr-w),1);
+  }
+  @include hover {
+    transform: scale(1.015);
+  }
+  &:active {
+    transform: scale(.975);
+  }
+}

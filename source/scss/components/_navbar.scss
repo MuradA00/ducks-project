@@ -1,0 +1,72 @@
+.navbar {
+  min-height: 74px;
+  display: flex;
+  align-items: center;
+  &-container {
+    padding: 0 1rem;
+    max-width: calc(1840px + 2rem);
+    margin: 0 auto;
+    width: 100%;
+  }
+  &-flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &-col {
+    &--flex {
+      display: flex;
+      align-items: center;
+      grid-gap: 2rem;
+    }
+  }
+  &-socials {
+    display: flex;
+    align-items: center;
+    grid-gap: 2rem;
+    &__item {
+      width: 1.125rem;
+      height: 1.125rem;
+
+      svg {
+        fill: #5a5251;
+        transition: fill 300ms ease;
+      }
+      @include hover {
+        svg {
+          fill: #3393f5;
+        }
+      }
+    }
+  }
+  &-links {
+    display: flex;
+    align-items: center;
+    grid-gap: 2rem;
+    color: #847877;
+    font-weight: 500;
+
+    &__link {
+      transition: color 300ms ease;
+      @include hover {
+        color: rgba(var(--clr-y), 1);
+      }
+      &--selected {color: rgba(var(--clr-y), 1);}
+    }
+  }
+}
+
+.stat {
+  &-info {
+    display: flex;
+    flex-direction: column;
+  }
+  &-players {
+    font-weight: 700;
+  }
+  &-highlighted {
+    color: #847877;
+    font-weight: 500;
+    font-size: var(--t-sm);
+  }
+}
