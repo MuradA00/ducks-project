@@ -1,0 +1,247 @@
+.modal {
+  --overlay-modal: #{HexToRGB(#171515)};
+  background-color: rgba(var(--overlay-modal), .8);
+  z-index: 6;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  overflow-y: scroll;
+  transition: 300ms ease;
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+
+  &--active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+
+    .modal-inner {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  &-btn {
+    span {
+      font-size: 1.25rem;
+    }
+  }
+  &-container {
+    padding: 1rem;
+
+    @include dfc;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+  }
+  &-close {
+    position: absolute;
+
+    top: 1rem;
+    right: 1rem;
+
+    svg {
+      fill: rgba(var(--clr-w), 1);
+
+      width: 1rem;
+      height: 1rem;
+    }
+  }
+  &-options {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    grid-gap: 1.125rem;
+    max-width: 206px;
+    margin: 0 auto;
+  }
+  &-retry {
+    max-width: 470px;
+    width: 100%;
+    padding:28px;
+
+    @include dfc;
+    grid-gap: 1rem;
+
+    background-image: url('../../img/modal/bg-modal-btn.webp');
+
+    &__text {
+      text-transform: uppercase;
+      font-size: 17px;
+      font-weight: 800;
+      font-family: var(--ff);
+    }
+    &__icon {
+      width: 20px;
+      height: 20px;
+
+      transition: all 300ms ease;
+
+      svg, img {
+        display: block;
+        width: 100%;
+        height: 100%;
+
+        fill: rgba(var(--cl-w), 1);
+      }
+    }
+    @include hover {
+      .modal-retry__icon {
+        transform: rotate(180deg);
+      }
+    }
+  }
+  &-inner {
+    width: 100%;
+
+    @include dfc;
+    justify-content: flex-start;
+    flex-direction: column;
+
+    transition: 300ms ease 150ms;
+
+    transform: scale(.95);
+
+    opacity: 0;
+  }
+  &-body {
+    position: relative;
+
+    width: 100%;
+    max-width: 386px;
+
+    background-color: #201d1d;
+    border-radius: 6px;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+
+    padding: 1rem;
+  }
+  &-price {
+    color: rgba(var(--cl-yl), 1);
+    font-size: 26px;
+    text-align: center;
+    font-weight: 700;
+    display: block;
+    margin-top: 1.25rem;
+  }
+  &-info {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    &__label {
+      color: #878593;
+      font-size: 15px;
+      font-weight: 600;
+      line-height: 160%;
+
+    }
+    &__name {
+      color: rgba(var(--cl-w), 1);
+      text-transform: uppercase;
+      font-weight: 800;
+      font-size: var(--t-lg);
+    }
+  }
+
+  &-image {
+    margin: 0 auto 2.5rem auto;
+
+    position: relative;
+    img {
+      display: block;
+      object-fit: contain;
+      position: relative;
+      filter: drop-shadow(2rem -11px 0 #1e1b1b);
+    }
+  }
+  &-heading {
+    font-size: 22px;
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 160%;
+    text-align: center;
+
+    margin-bottom: 40px;
+    &__hl {
+      color: #f3c333;
+      display: block;
+      font-size: 28px;
+    }
+  }
+}
+
+#win-modal {
+  .modal {
+    &-body {
+      background-size: 100% 100%;
+      background-repeat: no-repeat;
+      padding: 40px 1rem;
+    }
+    &-image {
+      max-width: 210px;
+    }
+    &-inventory {
+      border: 1px solid rgba(var(--clr-o), 1);
+      @include dfc;
+      text-align: center;
+      min-height: 54px;
+      border-radius: 8px;
+      font-size: 20px;
+      font-weight: 700;
+      text-transform: uppercase;
+      padding: 0 0.75rem;
+      min-width: 224px;
+      transition: background-color 300ms ease;
+      @include hover {
+        background-color: rgba(var(--clr-o), 1);
+      }
+    }
+    &-price {
+      color: rgba(var(--clr-y), 1);
+      font-size: 20px;
+      font-family: var(--ff-g);
+      font-weight: 700;
+    }
+    &-info {
+      font-family: var(--ff-g);
+      margin-bottom: 1.25rem;
+      &__label {
+        font-weight: 700;
+        font-size: 18px;
+        color: rgba(var(--clr-w), 1);
+      }
+      &__name {
+        color: #9b8885;
+        font-weight: 500;
+        font-size: 13px;
+        text-transform: capitalize;
+      }
+    }
+  }
+}
+
+@include mobile {
+  #win-modal {
+    .modal {
+      &-image {
+        max-width: 120px;
+      }
+    }
+  }
+  .modal {
+    &-container {
+      padding: 12px;
+    }
+    &-image {
+      max-width: 150px;
+      margin-bottom: 1rem;
+    }
+    &-options {
+      max-width: 100%;
+    }
+  }
+}

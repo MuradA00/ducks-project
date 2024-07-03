@@ -17,6 +17,66 @@
       display: none;
     }
   }
+  &-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    min-height: 480px;
+  }
+  &-dynamic {
+    position: relative;
+  }
+  &-tabs {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    border-top: 2px solid #1b1919;
+    display: flex;
+    align-items: center;
+    &__item {
+      font-size: 20px;
+      font-weight: 800;
+      color: #9b8885;
+      text-transform: uppercase;
+      transition: all 300ms ease;
+      padding: 0 1.25rem;
+      min-height: 40px;
+      @include dfc;
+      text-align: center;
+      position: relative;
+      margin-top: -2px;
+      &::after {
+        @include pseudo;
+        width: 200%;
+        height: 140px;
+        background-image: url('../../img/icons/tabActiveItemGradient.webp');
+        background-size: 100% 100%;
+        z-index: -1;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        opacity: 0;
+        transition: opacity 300ms ease;
+        pointer-events: none;
+      }
+      &::before {
+        @include pseudo;
+        width: 100%;
+        height: 2px;
+        top: 0;
+        left: 0;
+        background-color: rgba(var(--clr-o), 1);
+        pointer-events: none;
+        opacity: 0;
+      }
+      &--active {
+        color: rgba(var(--clr-o), 1);
+        &::before,
+        &::after {
+          opacity: 1;
+        }
+      }
+    }
+  }
   &-button {
     flex: 1;
   }

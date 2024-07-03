@@ -25,6 +25,10 @@ body {
 
   -webkit-text-size-adjust: 100%;
   // for text resize
+
+  @include small-tablet {
+    padding-bottom: 58px;
+  }
 }
 
 .descr {
@@ -41,6 +45,10 @@ main {
 
   display: flex;
   flex-direction: column;
+
+  @include small-tablet {
+    padding-top: 1.5rem;
+  }
 
   & > *:last-child {
     padding-bottom: 10rem;

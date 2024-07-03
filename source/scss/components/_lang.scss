@@ -1,8 +1,8 @@
 .lang {
-  background-color: rgba(var(--clr-dark-8), 1);
+  background-color: #24201f;
 
   position: relative;
-
+  font-family: var(--ff-e);
   border-radius: 6px;
 
   &:hover {
@@ -24,18 +24,18 @@
     grid-gap: 11px;
   }
   &-text {
-    color: rgba(var(--clr-w), 1);
+    color: #857977;
     font-size: 13px;
-    font-weight: 800;
+    font-weight: 600;
     text-transform: uppercase;
   }
   &-arrow {
     display: block;
-    width: 7px;
-    height: 4px;
+    width: 9px;
+    height: 5px;
     clip-path: polygon(50% 100%, 0 0, 100% 0);
 
-    background-color: #424454;
+    background-color: #68605e;
 
     transition: transform 400ms ease;
   }
@@ -96,18 +96,13 @@
 @include laptop {
 .lang {
     grid-area: lang;
-
-    &-text,
+    border-radius: 4px;
+    &-selected {
+      padding: 4px 8px;
+      justify-content: center;
+    }
     &-arrow {
       display: none;
-    }
-    &-selected {
-      padding: 0;
-
-      width: 26px;
-      height: 1.5rem;
-
-      justify-content: center;
     }
     &-flag {
       max-width: 18px;

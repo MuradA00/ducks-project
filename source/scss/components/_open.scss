@@ -3,6 +3,21 @@
     min-width: 214px;
     filter: drop-shadow(0 10px 40px rgba(204, 114, 88, .3));
   }
+  &-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+  }
+  &-title {
+    font-size: 28px;
+    text-align: center;
+    font-weight: 700;
+    text-transform: uppercase;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
   &-return {
     background-color: #1c1a1a;
     @include dfc;
@@ -162,7 +177,7 @@
 
     position: relative;
 
-    margin-bottom: 4rem;
+    margin-bottom: 3rem;
 
     &::-webkit-scrollbar {
       display: none;
@@ -317,6 +332,12 @@
 
 @include tablet {
   .open {
+    &-title {
+      font-size: 1.125rem;
+    }
+    &-header {
+      margin-bottom: 5rem;
+    }
     &-row {
       min-height: 160px;
 

@@ -1,0 +1,163 @@
+.giveaway {
+  padding: 2rem 0;
+  &-row {
+    display: grid;
+    grid-template-columns: .35fr 1fr;
+    grid-gap: 2rem 0;
+  }
+  &-name {
+    font-size: 15px;
+    &_type {
+      color: #c6b6b6;
+    }
+  }
+  &-col {
+    grid-gap: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  &-link {
+    background-color: #1b1919;
+    min-height: 58px;
+    @include dfc;
+    text-align: center;
+    font-weight: 600;
+    border-radius: 6px;
+    width: fit-content;
+    padding: 0 1.25rem;
+  }
+  &-header {
+    display: flex;
+    align-items: center;
+    grid-gap: 1rem;
+  }
+  &-icon {
+    max-width: 54px;
+  }
+  &-info {
+    &__title {
+      font-size: 20px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+    &__subheading {
+      font-size: var(--t-base);
+      font-weight: 500;
+      color: #9b8885;
+    }
+  }
+  &-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: clamp(1rem, 2vw, 2rem);
+  }
+  &-image {
+    position: absolute !important;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 2rem;
+    width: 128px;
+    height: 94px;
+    img {
+      object-fit: contain;
+    }
+  }
+  &-timer {
+    display: flex;
+    align-items: center;
+    grid-gap: 8px;
+    font-weight: 500;
+    z-index: 1;
+    svg {
+      display: block;
+      fill: var(--clr);
+    }
+  }
+  &-date {
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+  &-type {
+    color: #635654;
+    font-size: var(--t-sm);
+    font-weight: 500;
+    text-transform: capitalize;
+  }
+  &-item {
+    min-height: 166px;
+    border-radius: 12px;
+    border-bottom: 2px solid var(--clr);
+    position: relative;
+    padding: 20px;
+    background-color: #1c1a1a;
+    position: relative;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    & > * {
+      position: relative;
+    }
+    &::after {
+      @include pseudo;
+      pointer-events: none;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+
+      background-image: var(--bg);
+      background-size: 100% 100%;
+      background-repeat: no-repeat;
+    }
+    &--orange {
+      --clr: #e96b3f;
+      --bg: url('../../img/giveaway/orangeOverlay.webp');
+    }
+    &--red {
+      --clr: #e4463d;
+      --bg: url('../../img/giveaway/redOverlay.webp');
+    }
+    &--ppl {
+      --clr: #9e3db4;
+      --bg: url('../../img/giveaway/pplOverlay.webp');
+    }
+  }
+}
+
+@include laptop {
+  .giveaway {
+    &-item {
+      min-height: 144px;
+    }
+    &-image {
+      width: 94px;
+      height: 64px;
+    }
+    &-row {
+      display: flex;
+      flex-direction: column;
+    }
+    &-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    &-item {
+      &:nth-child(3) {
+        grid-column: span 2;
+      }
+    }
+  }
+}
+
+@include small-tablet {
+  .giveaway {
+    &-grid {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}

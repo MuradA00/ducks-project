@@ -2,6 +2,7 @@
   min-height: 74px;
   display: flex;
   align-items: center;
+  position: relative;
   &-container {
     padding: 0 1rem;
     max-width: calc(1840px + 2rem);
@@ -23,12 +24,22 @@
   &-socials {
     display: flex;
     align-items: center;
-    grid-gap: 2rem;
+    grid-gap: 1rem;
     &__item {
-      width: 1.125rem;
-      height: 1.125rem;
-
+      @include dfc;
+      width: 2rem;
+      height: 2rem;
+      transition: background-color 300ms ease;
+      border-radius: 50%;
+      @include hover {
+        background-color: rgba(var(--clr-w), .05);
+      }
+      &:active {
+        background-color: rgba(var(--clr-w), .05);
+      }
       svg {
+        width: 1.125rem;
+        height: 1.125rem;
         fill: #5a5251;
         transition: fill 300ms ease;
       }
@@ -68,5 +79,23 @@
     color: #847877;
     font-weight: 500;
     font-size: var(--t-sm);
+  }
+}
+
+@include laptop {
+  .navbar {
+    min-height: 48px;
+    &-socials {
+      grid-gap: .5rem;
+    }
+    &-col {
+      &--flex {
+        grid-gap: 1rem;
+      }
+    }
+    &-container {
+      padding: 0 0.75rem;
+      max-width: calc(1840px + 1.5rem);
+    }
   }
 }

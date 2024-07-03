@@ -5,6 +5,7 @@
   @include('partials/navbar.html')
   @include('partials/_roulette.html')
   @include('partials/header.html')
+  @include('partials/_win-modal.html')
   <main>
     <section class="open">
       <div class="open-container container">
@@ -12,14 +13,13 @@
             <a href="#" class="open-return">
               ‹ Back
             </a>
-            <div class="header-panel__title">
-              daily free
-              <div class="header-panel__title_sub">
-                case
-              </div>
-            </div>
-            <button class="header-panel__sound">
-              <img src="img/global/sound-icon@4x.webp" alt="">
+            <h1 class="open-title">
+              darpen solution case
+            </h1>
+            <button class="heading-sound">
+              <svg width='32px' height='26px'>
+                <use href='img/sprite/sprite.svg#frequencyIcon'></use>
+              </svg>
             </button>
         </div>
       </div>
@@ -156,7 +156,7 @@
               <span class="open-multipliers__content">х5</span>
             </li>
           </ul>
-          <button class="open-button button">
+          <button class="open-button button" id="win-button">
             <span class="button-text">
               $90 Open case
             </span>

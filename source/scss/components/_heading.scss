@@ -2,7 +2,15 @@
   --mb: 2rem;
 
   margin-bottom: var(--mb);
+  position: relative;
 
+  &-sound {
+    fill: rgba(var(--clr-o), 1);
+    transition: opacity 300ms ease;
+    &--disabled {
+      opacity: .4;
+    }
+  }
   &-flex {
     display: flex;
     align-items: center;

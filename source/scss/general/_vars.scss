@@ -76,6 +76,7 @@
 --clr-y: #{HexToRGB(#f2c333)};
 --clr-bl: #{HexToRGB(#0690c1)};
 --clr-bl-2: #{HexToRGB(#3183df)};
+--clr-o: #{HexToRGB(#ee6742)};
 --clr-dark-1: #{HexToRGB(#1c1621)};
 --clr-dark-2: #{HexToRGB(#9b2d30)};
 --clr-dark-3: #{HexToRGB(#9c7f81)};
@@ -116,4 +117,10 @@
 
 // ---------------default background modal variable-----------
 
+}
+
+@media (max-width: (767px)) {
+  :root {
+    --container-offset: 12px;
+  }
 }

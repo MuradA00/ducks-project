@@ -1,7 +1,7 @@
 .slider {
   --slider-item-h: 700px;
   --active-bullet-bg: #{HexToRGB(#3493f5)};
-  --py: 5rem;
+  --py: clamp(3rem, 5vw, 5rem);
   --clr-o: #ea6c40;
 
   position: relative;
