@@ -8,6 +8,9 @@
     &-grid {
       &__item {
         min-height: var(--inv-item-h);
+        cursor: pointer;
+        background-image: none !important;
+        border-bottom: 2px solid #694bd1 !important;
       }
     }
   }
@@ -305,6 +308,15 @@
 
 @include laptop {
   .upgrade {
+    .heading-col {
+      width: 100%;
+      justify-content: flex-start;
+    }
+    &-sound {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
     &-tabs {
       position: initial;
       transform: translate(0);

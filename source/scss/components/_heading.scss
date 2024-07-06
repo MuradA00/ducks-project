@@ -22,8 +22,10 @@
     max-width: 1.75rem;
     img {
       width: 100%;
+      display: block;
     }
     svg {
+      display: block;
       fill: #edbf31;
     }
   }
@@ -45,6 +47,19 @@
       flex-direction: column;
       align-items: center;
       text-align: center;
+    }
+  }
+}
+
+@include small-tablet {
+  .heading {
+    &-icon {
+      img, svg {
+        max-width: 20px;
+      }
+    }
+    &-title {
+      font-size: 22px;
     }
   }
 }

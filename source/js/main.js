@@ -139,7 +139,9 @@ function initSelect(elem){
   });
 };
 
-initSelect(topSelect);
+if (topSelect) {
+  initSelect(topSelect);
+}
 
 if (Swiper) {
   const swiper = new Swiper('.slider-main', {
