@@ -48,6 +48,10 @@
 
     padding: 20px;
     position: relative;
+
+    background-image: url('../../img/profile/itemOverlay.webp');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
     &__footer {
       font-family: var(--ff-g);
       font-size: var(--t-xs);

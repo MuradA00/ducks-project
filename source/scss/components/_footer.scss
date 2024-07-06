@@ -14,6 +14,16 @@
   background-color: var(--footer-bg);
   z-index: 2;
 
+  &::before {
+    @include pseudo;
+    width: 45%;
+    height: 100%;
+    background-image: url('../../img/footer/footerGradient.webp');
+    background-size: 100% 100%;
+    bottom: 0;
+    right: 0;
+    pointer-events: none;
+  }
   &-body {
     display: flex;
     justify-content: space-between;
@@ -101,7 +111,8 @@
     grid-gap: 1.5rem;
     &__link {
       color: #8d7d7a;
-      font-weight: 500;
+      font-family: var(--ff-g);
+      font-weight: 600;
       transition: all 200ms ease;
       @include hover {
         color: rgba(var(--clr-y), 1);

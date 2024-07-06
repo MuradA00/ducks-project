@@ -1,0 +1,74 @@
+<div class="modal" id="payment-modal">
+  <div class="modal-container">
+    <div class="modal-inner">
+      <div class="modal-body">
+        <button class="modal-close">
+          <img src="../img/sprite/modalCloseIcon.svg" alt="close">
+        </button>
+        <div class="modal-content">
+          <span class="modal-heading">
+            balance replenishment
+          </span>
+          <div class="modal-balance">
+            <span class="modal-balance__label">Choose a payment method</span>
+            <ul class="modal-payments">
+              <li class="modal-payments__item modal-payments__item--selected">
+                <img class="modal-payments__icon" src="../img/icons/paymentIcon.webp" alt="payment">
+              </li>
+              <li class="modal-payments__item">
+                <img class="modal-payments__icon" src="../img/icons/paymentIcon.webp" alt="payment">
+              </li>
+              <li class="modal-payments__item">
+                <img class="modal-payments__icon" src="../img/icons/paymentIcon.webp" alt="payment">
+              </li>
+              <li class="modal-payments__item">
+                <img class="modal-payments__icon" src="../img/icons/paymentIcon.webp" alt="payment">
+              </li>
+              <li class="modal-payments__item">
+                <img class="modal-payments__icon" src="../img/icons/paymentIcon.webp" alt="payment">
+              </li>
+              <li class="modal-payments__item">
+                <img class="modal-payments__icon" src="../img/icons/paymentIcon.webp" alt="payment">
+              </li>
+            </ul>
+          </div>
+          <div class="modal-enter">
+            <span class="modal-balance__label">
+              Enter the deposit amount
+            </span>
+            <div class="modal-input">
+              <input class="modal-input__field input" type="text">
+              <button class="modal-currency">
+                <svg width='18px' height='18px'>
+                  <use href='img/sprite/sprite.svg#currencyIcon'></use>
+                </svg>
+              </button>
+            </div>
+            <div class="modal-footer">
+              <div class="modal-flex modal-commission">
+                <span class="modal-commission__value">
+                  Commission
+                </span>
+                <span class="modal-commission__value">
+                  0%
+                </span>
+              </div>
+              <div class="modal-divider"></div>
+              <div class="modal-flex modal-total">
+                <span class="modal-total__label">
+                  total to be paid
+                </span>
+                <span class="modal-total__value">
+                  $ 100.03
+                </span>
+              </div>
+            </div>
+          </div>
+          <button class="modal-pay">
+            proceed to payment
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -24,10 +24,26 @@ body {
   background: rgba(var(--bg-body), 1);
 
   -webkit-text-size-adjust: 100%;
-  // for text resize
-
   @include small-tablet {
     padding-bottom: 58px;
+  }
+}
+
+.locked {
+  overflow: hidden !important;
+}
+
+@keyframes opacity-animation {
+  0% {
+    opacity: .3;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: .3;
   }
 }
 
@@ -57,6 +73,10 @@ main {
       padding-bottom: 3rem;
     }
   }
+}
+
+.battlepass-main {
+  padding-top: 64px;
 }
 
 *,

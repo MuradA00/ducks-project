@@ -6,6 +6,13 @@
 
   position: relative;
 
+  &-items-image {
+    position: absolute;
+    max-width: 500px;
+    bottom: 140px;
+    z-index: 1;
+    left: 300px;
+  }
   &-pagination {
     position: absolute;
     left: 60px;
@@ -56,6 +63,7 @@
     &__highlighted {
       color: #161616;
       -webkit-text-stroke: 2px #c7c7c7;
+      position: relative;
     }
   }
   &-description {
@@ -198,9 +206,6 @@
         background-color: rgba(var(--clr-b), .25);
       }
     }
-    &-button {
-      width: 100%;
-    }
     &-inner {
       grid-gap: 2rem;
     }
@@ -211,6 +216,17 @@
   .timer {
     &-date {
       color: rgba(var(--clr-w), 1);
+    }
+  }
+}
+
+@include small-tablet {
+  .slider{
+    &-items-image {
+      display: none;
+    }
+    &-button {
+      width: 100%;
     }
   }
 }

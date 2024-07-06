@@ -21,11 +21,28 @@
 
 @font-face {
   font-style: normal;
-  font-weight: 500;
+  font-weight: 400;
   font-family: "Intro";
 
   font-display: swap;
-  src: url("./../Intro.woff") format("woff");
+  src: url("./../ofont.ru_Intro.ttf") format("ttf");
+}
+
+@font-face {
+  font-style: normal;
+  font-weight: 700;
+  font-family: "Intro";
+
+  font-display: swap;
+  src: url("./../Intro-Bold.otf") format("woff");
+}
+@font-face {
+  font-style: normal;
+  font-weight: 900;
+  font-family: "Intro";
+
+  font-display: swap;
+  src: url("./../Intro-Black.otf") format("woff");
 }
 
 // 100 – Thin || Hairline

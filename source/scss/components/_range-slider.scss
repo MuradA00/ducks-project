@@ -1,0 +1,109 @@
+.range {
+  position: relative;
+  height: 6px;
+  width: 234px;
+  --bg-range: #{HexToRGB(#171515)};
+  border-radius: 12px;
+  &-label {
+    position: absolute;
+
+    font-size: var(--t-sm);
+    font-weight: 600;
+    color: rgba(var(--clr-w), 1);
+
+    top: -24px;
+
+    &--left {
+      left: 0;
+    }
+    &--right {
+      right: 0;
+    }
+  }
+  &-track {
+    background: linear-gradient(to right, rgba(var(--bg-range), 1) 30%, rgba(var(--clr-r), 1) 30%, rgba(var(--clr-y), 1) 80%, rgba(var(--bg-range), 1) 80%);
+    border-radius: 12px;
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    z-index: 1;
+
+    &--blue {
+      // background: linear-gradient(to right, rgba(var(--bg-range), 1) 30%, #0690c1 30%, #0690c1 76%, rgba(var(--bg-range), 1) 76%) !important;
+    }
+  }
+  input[type="range"]::-webkit-slider-runnable-track {
+    -webkit-appearance: none;
+    height: 5px;
+  }
+  input[type="range"]::-moz-range-track {
+    -moz-appearance: none;
+    height: 5px;
+  }
+  input[type="range"]::-ms-track {
+    appearance: none;
+    height: 5px;
+  }
+  &-slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    -webkit-appearance: none;
+    margin: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background-color: rgba(var(--bg-range), 1);
+
+    border-radius: 4px;
+
+    &::-webkit-slider-thumb {
+      -webkit-appearance: none;
+
+      width: 24px;
+      height: 24px;
+
+      top: -14px;
+      z-index: 1;
+      transition: 300ms ease;
+      border-radius: 50%;
+      background-size: 100% 100%;
+      position: relative;
+      cursor: pointer;
+      margin: 4px;
+      @include hover {
+        box-shadow: 0 0 0px 4px rgba(var(--clr-o), .25);
+      }
+      &:active {
+        box-shadow: 0 0 0 6px rgba(var(--clr-o), .5);
+      }
+    }
+  }
+}
+
+.slider-1 {
+  &::-webkit-slider-thumb {
+    background-image: url('../img/range/range-thumb.webp');
+  }
+}
+
+.slider-2 {
+  &::-webkit-slider-thumb {
+    background-image: url('../img/range/second-range-thumb.webp');
+    @include hover {
+      box-shadow: 0 0 0px 4px rgba(var(--clr-y), .25);
+    }
+    &:active {
+      box-shadow: 0 0 0 6px rgba(var(--clr-y), .5);
+    }
+  }
+}
+
+@include mobile {
+  .range {
+    width: 100%;
+  }
+}

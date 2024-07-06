@@ -1,0 +1,60 @@
+<div class="search-panel">
+  <div class="search-panel__container container">
+    <div class="search-panel__flex">
+      <div class="search-panel__bar">
+        <div class="search-bar">
+          <div class="search-bar__field">
+            <input class="input" type="text" placeholder="Case search">
+            <div class="search-icon">
+              <svg>
+                <use href="img/sprite/sprite.svg#search-icon"></use>
+              </svg>
+            </div>
+          </div>
+      </div>
+      </div>
+      <div class="panel-filter">
+        <div class="panel-filter__head">
+          Sorting by price (from and to):
+        </div>
+        <div class="panel-filter__amount">
+          <div class="panel-filter__amount-value panel-filter__amount-value--flex">
+            <span>0</span>
+            <span class="panel-filter__currency">$</span>
+          </div>
+        </div>
+        <div class="panel-divider">
+        </div>
+        <div class="panel-filter__amount ">
+          <div class="panel-filter__amount-value panel-filter__amount-value--flex">
+            <span>70 </span>
+            <span class="panel-filter__currency">$</span>
+          </div>
+        </div>
+        <div class="panel-filter__range range">
+          <div class="panel-filter__range-track range-track range-track--blue" style="background: linear-gradient(to right, rgba(var(--bg-range), 1) 30%, rgba(var(--clr-r), 1) 30%, rgba(var(--clr-y), 1) 70%, rgba(var(--bg-range), 1) 70%);">
+          </div>
+          <span id="range1" class="panel-filter__value panel-filter__value--first"></span>
+          <span id="range2" class="panel-filter__value panel-filter__value--second"></span>
+          <input
+            min="0"
+            max="100"
+            value="30"
+            oninput="slideOne()"
+            type="range"
+            class="panel-filter__range-slider range-slider slider-1"
+          >
+          <input
+            min="0"
+            max="100"
+            value="70"
+            id="slider-2"
+            oninput="slideTwo()"
+            type="range"
+            class="panel-filter__range-slider range-slider slider-2"
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

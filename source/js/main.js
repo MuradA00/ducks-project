@@ -8,10 +8,15 @@ const mobNav = document.querySelector('.header-nav');
 const panelMenu = document.querySelector('.menu-burger');
 const winModal = document.querySelector('#win-modal')
 const winButton = document.querySelector('#win-button');
+const paymentModal = document.querySelector('#payment-modal');
+const paymentButton = document.querySelector('.profile-replenish');
+const closePaymentModalButton = document.querySelector('#payment-modal .modal-close')
 const roulettePanelButtons = document.querySelectorAll('.roulette-toggle');
 const soundToggler = document.querySelector('.heading-sound')
+const paymentMethods =  document.querySelectorAll('.modal-payments__item');
 const body = document.body;
 const upgradeTabsButtons = document.querySelectorAll('.upgrade-tabs__item');
+const topSelect = document.querySelector('.tops-select');
 
 const closeModalByOuterClick = (modal) => {
   const modalContainer = modal.querySelector('.modal-inner');
@@ -32,6 +37,18 @@ const hideModal = () => {
 const showModal = () => {
   body.classList.add('locked');
   document.documentElement.classList.add('locked');
+}
+
+if (paymentButton) {
+  paymentButton.addEventListener('click', () => {
+    paymentModal.classList.add('modal--active')
+    showModal();
+  })
+  closeModalByOuterClick(paymentModal);
+  closePaymentModalButton.addEventListener('click', () => {
+    paymentModal.classList.remove('modal--active');
+    hideModal();
+  })
 }
 
 if (soundToggler) {
@@ -60,6 +77,7 @@ const handleToggleItems = (array, activeClass) => {
 
 handleToggleItems(upgradeTabsButtons, 'upgrade-tabs__item--active');
 handleToggleItems(roulettePanelButtons, 'roulette-toggle--active');
+handleToggleItems(paymentMethods, 'modal-payments__item--selected');
 
 const menuHandler = () => {
   panelMenu.classList.toggle('menu-burger--active');
@@ -97,6 +115,31 @@ if (accsItems) {
   })
 
 }
+
+function initSelect(elem){
+  const selectHolder = elem.querySelector('.holder');
+  const selectOptions = elem.querySelectorAll('.dropdownOption li');
+  const dropHolder = elem.querySelector('.dropdown');
+  let selectedOption = selectOptions[0];
+
+  selectedOption.classList.add('current');
+
+  dropHolder.addEventListener('click', function () {
+    dropHolder.classList.add('dropdown-active');
+   });
+
+  selectOptions.forEach(function(currentElement) {
+    currentElement.addEventListener('click', function(){
+      dropHolder.classList.remove('dropdown-active');
+      selectedOption.classList.remove('current');
+      selectedOption = currentElement;
+      currentElement.classList.add('current');
+      selectHolder.innerText = currentElement.textContent;
+    });
+  });
+};
+
+initSelect(topSelect);
 
 if (Swiper) {
   const swiper = new Swiper('.slider-main', {

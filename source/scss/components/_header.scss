@@ -4,6 +4,18 @@
   $root-inner-px: 1.5rem;
 
   padding: 1rem 0;
+  position: relative;
+  &::before {
+    @include pseudo;
+    width: 56px;
+    height: 114px;
+    background-image: url('../../img/header/headerLightningIcon.webp');
+    background-size: 100% 100%;
+    right: 0;
+    top: 0;
+    pointer-events: none;
+    z-index: 1;
+  }
   &-support {
     background-color: #1c1a1a;
 
@@ -94,6 +106,17 @@
     flex-direction: column;
     grid-gap: 30px;
     overflow: hidden;
+    position: relative;
+    &::after {
+      background-repeat: no-repeat;
+      @include pseudo;
+      width: 55%;
+      height: 100%;
+      background-image: url('../../img/header/headerOverlay.webp');
+      pointer-events: none;
+      top: 0;
+      right: 0;
+    }
     &__logo {
       max-width: var(--logo-w);
       width: 100%;
@@ -124,6 +147,10 @@
 
 @include laptop {
   .header {
+    &::before {
+      width: 48px;
+      height: 84px;
+    }
     &-body {
       grid-gap: .75rem;
       &__logo {
@@ -241,5 +268,11 @@
         }
       }
     }
+  }
+}
+
+@include small-tablet {
+  .header {
+    padding: 8px 0;
   }
 }
